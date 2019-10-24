@@ -25,7 +25,6 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-*.lcov
 
 # nyc test coverage
 .nyc_output
@@ -96,18 +95,6 @@ public/
 .dynamodb/
 
 ### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.wasm
-*.wat
-*.xhtml
+
 
 # End of https://www.gitignore.io/api/web,node
