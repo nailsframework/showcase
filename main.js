@@ -15,6 +15,10 @@ window.nails = new Nails({
     data: {
         title: "Your Nails App",
         whoami: "NailsJS",
+        sample: [
+            { name: "Jill", lastname: "smith" },
+            { name: "Ingo", lastname: "Meyers" },
+        ]
     },
     methods: {
         onInit() {

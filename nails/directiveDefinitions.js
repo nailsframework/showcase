@@ -1,7 +1,6 @@
 'use strict';
-
+import { RenderingEngine } from "./engine";
 export class NailsDirectives {
-
 
     constructor() {
         this.directives = ['if', 'form', 'for', 'test']
@@ -46,6 +45,7 @@ export class NailsDirectives {
 
     for(element, statemenet, state) {
 
+        console.log('nfor called')
         var engine = new RenderingEngine(state);
         element.style.display = "none";
         function interpolateCustomElement(element, object, descriptor) {

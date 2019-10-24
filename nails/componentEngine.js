@@ -1,5 +1,6 @@
 import { Router } from './coreComponents/router.component.js';
 import { type } from 'os';
+import { isRegExp } from 'util';
 
 export class ComponentEngine {
     constructor(state, engine, nails, routings) {
@@ -15,7 +16,7 @@ export class ComponentEngine {
     }
 
     injectComponents() {
-        if(Array.isArray(this.state.mountedComponents)) return;
+        if (Array.isArray(this.state.mountedComponents)) return;
         this.state.mountedComponents = [];
 
         for (let component of this.state.components) {
@@ -29,6 +30,18 @@ export class ComponentEngine {
 
             this.state.mountedComponents.push(instance);
         }
+    }
+
+    traveseElementAndExecuteDirectives(element) {
+
+        if(!element) return;
+        if (element.childNodes.length > 0) {
+            for (let child of element.childNodes) {
+                this.traveseElementAndExecuteDirectives(child)
+            }
+        }
+        this.engine.executeDirectivesOnElement(element, true)
+
     }
 
     renderComponents() {
@@ -52,7 +65,12 @@ export class ComponentEngine {
                             continue;
                         }
                         element.innerHTML = componentHTML;
+
+                        this.traveseElementAndExecuteDirectives(element)
                         this.engine.executeInerpolationsOnElement(element)
+
+
+
                     }
                     newHtml = document.body.innerHTML;
 
@@ -73,7 +91,7 @@ export class ComponentEngine {
                     component = c;
                 }
             }
-            if(component === null){
+            if (component === null) {
                 return;
             }
             if (this.state.mountedComponents[name] === null) {
