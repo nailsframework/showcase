@@ -44,8 +44,6 @@ export class NailsDirectives {
 
 
     for(element, statemenet, state) {
-
-        console.log('nfor called')
         var engine = new RenderingEngine(state);
         element.style.display = "none";
         function interpolateCustomElement(element, object, descriptor) {
