@@ -11,7 +11,7 @@ export class NavbarComponent {
         <div class="container">
           <a href="#" class="navbar-brand">
             <!-- Logo Image -->
-            <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <img src="assets/logo.png" width="45" alt="" class="d-inline-block align-middle mr-2">
             <!-- Logo Text -->
             <span class="text-uppercase font-weight-bold">{{whoami}}</span>
           </a>
@@ -23,7 +23,6 @@ export class NavbarComponent {
               <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
               <li class="nav-item"><a href="#/login" class="nav-link">Login</a></li>
               <li class="nav-item"><a href="#/showcase" class="nav-link">Other Routing</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
             </ul>
           </div>
         </div>

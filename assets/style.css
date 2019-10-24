@@ -43,5 +43,6 @@ footer {
 .yield{
     height: 400px;
     width: 100%;
-    background-color: green;
+    margin-left: 50px;
+    margin-right: 50px;
 }
